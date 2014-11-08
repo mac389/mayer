@@ -24,7 +24,7 @@ connections /= nMem
 print connections
 heaviside = lambda x: 1 if x>=0 else 0
 
-duration = 1000
+duration = 100
 activity = np.zeros((n,duration))
 noise = np.random.sample(size=activity.shape)
 K=nMem #For now, don't know a better guess
@@ -41,4 +41,4 @@ for timestep in xrange(1,duration):
 fig = plt.figure()
 ax = fig.add_subplot(111)
 ax.imshow(activity,interpolation='nearest',aspect='auto',cmap=plt.cm.binary)
-plt.show()
+plt.savefig('network_activity.png',dpi=300)
